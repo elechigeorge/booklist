@@ -5,7 +5,9 @@ import { getLeads, removeLead } from '../../actions/leads'
 
 export class Leads extends Component {
     static propTypes = {
-        leads: PropTypes.array.isRequired
+        leads: PropTypes.array.isRequired,
+        getLeads: PropTypes.func.isRequired,
+        removeLead: PropTypes.func.isRequired
     }
 
     componentDidMount() {
@@ -16,8 +18,8 @@ export class Leads extends Component {
         return (
             <Fragment>
                 <h2>Book List</h2>
-                <table className="table table-stripped">
-                    <thead>
+                <table className="table table-striped table-bordered">
+                    <thead className="thead-dark">
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
